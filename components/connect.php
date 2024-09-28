@@ -1,7 +1,7 @@
 <?php
 
-$db_name = 'mysql:host=localhost;db_name=blog_db';
-$username = 'phpmyadmin';
+$db_name = 'mysql:host=localhost;dbname=blog_db';
+$user_name = 'phpmyadmin';
 $user_password = 'password';
 
-$con = new PDO($db_name, $username, $user_password);
+$conn = new PDO($db_name, $user_name, $user_password);
