@@ -10,6 +10,8 @@ if (isset($_SESSION['user_id'])) {
     $user_id = '';
 }
 
+include 'components/like_post.php';
+
 ?>
 
 <!DOCTYPE html>
