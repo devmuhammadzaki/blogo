@@ -48,7 +48,6 @@ include 'components/like_post.php';
                     <p>welcome <span><?= $fetch_profile['name']; ?></span></p>
                     <p>total comments: <span><?= $total_user_comments; ?></span></p>
                     <p>posts liked: <span><?= $total_user_likes; ?></span></p>
-                    <a href="update.php" class="btn">update profile</a>
                     <div class="flex-btn">
                         <a href="user_likes.php" class="option-btn">likes</a>
                         <a href="user_comments.php" class="option-btn">comments</a>
