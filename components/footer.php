@@ -1,3 +1,3 @@
 <footer class="footer">
-    &copy; <? date('Y'); ?> <span>Muhammad Zaki</span> @devmuhammadzaki
+    &copy; <?= date('Y'); ?> <span>Muhammad Zaki</span> @devmuhammadzaki
 </footer>

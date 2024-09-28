@@ -43,9 +43,9 @@ if (isset($_SESSION['user_id'])) {
                     $count_user_likes->execute([$user_id]);
                     $total_user_likes = $count_user_comments->rowCount();
                 ?>
-                    <p>welcome <span><? $fetch_profile['name']; ?></span></p>
-                    <p>total comments: <span><? $total_user_comments; ?></span></p>
-                    <p>posts liked: <span><? $total_user_likes; ?></span></p>
+                    <p>welcome <span><?= $fetch_profile['name']; ?></span></p>
+                    <p>total comments: <span><?= $total_user_comments; ?></span></p>
+                    <p>posts liked: <span><?= $total_user_likes; ?></span></p>
                     <a href="update.php" class="btn">update profile</a>
                     <div class="flex-btn">
                         <a href="user_likes.php" class="option-btn">likes</a>
@@ -79,11 +79,29 @@ if (isset($_SESSION['user_id'])) {
                 </div>
             </div>
             <div class="box">
-
+                <p>authors</p>
+                <div class="flex-box">
+                    <?php
+                    $select_authors = $conn->prepare("SELECT DISTINCT name FROM `admin` LIMIT 10");
+                    $select_authors->execute();
+                    if ($select_authors->rowCount() > 0) {
+                        while ($fetch_authors = $select_authors->fetch(PDO::FETCH_ASSOC)) {
+                    ?>
+                            <a href="author_posts.php?author=<?= $fetch_authors['name'] ?>" class="links"><?= $fetch_authors['name'] ?></a>
+                    <?php
+                        }
+                    } else {
+                        echo '<p class="empty">no posts added yet</p>';
+                    }
+                    ?>
+                    <a href="authors.php" class="btn">view all</a>
+                </div>
             </div>
         </div>
     </section>
-    <section class="posts-container"></section>
+    <section class="posts-container">
+
+    </section>
 
     <?php include 'components/footer.php'; ?>
 
