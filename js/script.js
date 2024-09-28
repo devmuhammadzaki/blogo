@@ -22,6 +22,31 @@ document.querySelector("#search-btn").onclick = () => {
   profile.classList.remove("active");
 };
 
+function toggleMode() {
+  const lightModeBtn = document.getElementById("lightmode-btn");
+  const darkModeBtn = document.getElementById("darkmode-btn");
+
+  if (lightModeBtn.classList.contains("hidden")) {
+    lightModeBtn.classList.remove("hidden");
+    darkModeBtn.classList.add("hidden");
+
+    // Change CSS variables for light mode
+    document.documentElement.style.setProperty("--white", "#fff");
+    document.documentElement.style.setProperty("--light-bg", "#f5f5f5");
+    document.documentElement.style.setProperty("--light-color", "#999");
+    document.documentElement.style.setProperty("--black", "#34495e");
+  } else {
+    lightModeBtn.classList.add("hidden");
+    darkModeBtn.classList.remove("hidden");
+
+    // Change CSS variables for dark mode
+    document.documentElement.style.setProperty("--white", "black");
+    document.documentElement.style.setProperty("--light-bg", "black");
+    document.documentElement.style.setProperty("--light-color", "#c2c0c0");
+    document.documentElement.style.setProperty("--black", "#728ba3");
+  }
+}
+
 window.onscroll = () => {
   navbar.classList.remove("active");
   searchForm.classList.remove("active");

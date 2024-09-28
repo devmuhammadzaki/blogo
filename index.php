@@ -20,7 +20,6 @@ include 'components/like_post.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- font awesome cdn link  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="shortcut icon" href="icon.png" type="image/x-icon">
@@ -147,9 +146,9 @@ include 'components/like_post.php';
                         <a href="category.php?category=<?= $fetch_posts['category']; ?>" class="post-cat"><i class="fas fa-tag"></i> <span><?= $fetch_posts['category']; ?></span></a>
                         <div class="icons">
                             <a href="view_post.php?post_id=<?= $post_id; ?>"><i class="fas fa-comment"></i><span>(<?= $total_post_comments; ?>)</span></a>
-                            <button type="submit" name="like-post"><i class="fas fa-heart" style="<?php if ($confirm_likes->rowCount() > 0) {
-                                                                                                        echo 'color:var(--red);';
-                                                                                                    } ?>"></i><span>(<?= $total_post_likes; ?>)</button>
+                            <button type="submit" name="like-post" style="background-color: var(--light-bg);"><i class="fas fa-heart" style="<?php if ($confirm_likes->rowCount() > 0) {
+                                                                                                                                                    echo 'color:var(--red);';
+                                                                                                                                                } ?>"></i><span>(<?= $total_post_likes; ?>)</button>
                         </div>
                     </form>
             <?php

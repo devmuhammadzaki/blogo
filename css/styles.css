@@ -308,6 +308,10 @@ section {
   display: none;
 }
 
+.hidden {
+  display: none;
+}
+
 .form-container {
   display: flex;
   align-items: center;

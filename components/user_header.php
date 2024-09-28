@@ -26,10 +26,12 @@ if (isset($message)) {
             <div id="menu-btn" class="fas fa-bars"></div>
             <div id="search-btn" class="fas fa-search"></div>
             <div id="user-btn" class="fas fa-user"></div>
+            <div id="lightmode-btn" class="fas fa-lightbulb" onclick="toggleMode()"></div>
+            <div id="darkmode-btn" class="fas fa-moon hidden" onclick="toggleMode()"></div>
         </div>
 
         <nav class="navbar">
-            <a href="home.php"><i class="fas fa-angle-right"></i> home</a>
+            <a href="index.php"><i class="fas fa-angle-right"></i> home</a>
             <a href="posts.php"><i class="fas fa-angle-right"></i> posts</a>
             <a href="all_categories.php"><i class="fas fa-angle-right"></i> categories</a>
             <a href="authors.php"><i class="fas fa-angle-right"></i> authors</a>
