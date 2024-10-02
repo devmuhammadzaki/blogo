@@ -68,14 +68,18 @@ include 'components/like_post.php';
                 <p>categories</p>
                 <div class="flex-box">
                     <a href="category.php?category=nature" class="links">nature</a>
-                    <a href="category.php?category=education" class="links">education</a>
-                    <a href="category.php?category=business" class="links">business</a>
-                    <a href="category.php?category=travel" class="links">travel</a>
-                    <a href="category.php?category=news" class="links">news</a>
-                    <a href="category.php?category=gaming" class="links">gaming</a>
-                    <a href="category.php?category=design" class="links">design</a>
+                    <a href="category.php?category=eduction" class="links">education</a>
+                    <a href="category.php?category=pets and animals" class="links">pets and animals</a>
                     <a href="category.php?category=technology" class="links">technology</a>
+                    <a href="category.php?category=fashion" class="links">fashion</a>
+                    <a href="category.php?category=entertainment" class="links">entertainment</a>
+                    <a href="category.php?category=movies" class="links">movies</a>
+                    <a href="category.php?category=gaming" class="links">gaming</a>
+                    <a href="category.php?category=music" class="links">music</a>
                     <a href="category.php?category=sports" class="links">sports</a>
+                    <a href="category.php?category=news" class="links">news</a>
+                    <a href="category.php?category=travel" class="links">travel</a>
+                    <a href="category.php?category=comedy" class="links">comedy</a>
                     <a href="all_categories.php" class="btn">view all</a>
                 </div>
             </div>
