@@ -79,9 +79,9 @@ include 'components/like_post.php';
                                     <a href="view_post.php?post_id=<?= $post_id; ?>" class="inline-btn">read more</a>
                                     <div class="icons">
                                         <a href="view_post.php?post_id=<?= $post_id; ?>"><i class="fas fa-comment"></i><span>(<?= $total_post_likes; ?>)</span></a>
-                                        <button type="submit" name="like_post"><i class="fas fa-heart" style="<?php if ($total_post_likes > 0 and $user_id != '') {
-                                                                                                                    echo 'color:red;';
-                                                                                                                }; ?>"></i><span>(<?= $total_post_likes; ?>)</span></button>
+                                        <button type="submit" name="like_post" style="background-color: var(--light-bg);"><i class="fas fa-heart" style="<?php if ($total_post_likes > 0 and $user_id != '') {
+                                                                                                                                                                echo 'color:red;';
+                                                                                                                                                            }; ?>"></i><span>(<?= $total_post_likes; ?>)</span></button>
                                     </div>
 
                                 </form>
