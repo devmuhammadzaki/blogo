@@ -28,3 +28,4 @@ and now you can access the website by writing: localhost:8000 in your browser's 
 ![](./screenshots/Screenshot%202024-09-28%20at%2015-54-39%20Home.png)
 ![](./screenshots/Screenshot%20from%202024-09-28%2006-19-00.png)
 ![](./screenshots/Screenshot%20from%202024-09-28%2006-19-31.png)
+![](./screenshots/Screenshot_2-10-2024_235525_127.0.0.1.jpeg)

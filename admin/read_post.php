@@ -20,7 +20,7 @@ if (isset($_POST['delete'])) {
    $delete_image->execute([$p_id]);
    $fetch_delete_image = $delete_image->fetch(PDO::FETCH_ASSOC);
    if ($fetch_delete_image['image'] != '') {
-      unlink('../uploaded_img/' . $fetch_delete_image['image']);
+      unlink('../uploaded_imgs/' . $fetch_delete_image['image']);
    }
    $delete_post = $conn->prepare("DELETE FROM `posts` WHERE id = ?");
    $delete_post->execute([$p_id]);
@@ -83,7 +83,7 @@ if (isset($_POST['delete_comment'])) {
                                                                echo 'coral';
                                                             }; ?>;"><?= $fetch_posts['status']; ?></div>
                <?php if ($fetch_posts['image'] != '') { ?>
-                  <img src="../uploaded_img/<?= $fetch_posts['image']; ?>" class="image" alt="">
+                  <img src="../uploaded_imgs/<?= $fetch_posts['image']; ?>" class="image" alt="">
                <?php } ?>
                <div class="title"><?= $fetch_posts['title']; ?></div>
                <div class="content"><?= $fetch_posts['content']; ?></div>

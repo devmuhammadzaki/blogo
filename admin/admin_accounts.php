@@ -14,7 +14,7 @@ if (isset($_POST['delete'])) {
    $delete_image = $conn->prepare("SELECT * FROM `posts` WHERE admin_id = ?");
    $delete_image->execute([$admin_id]);
    while ($fetch_delete_image = $delete_image->fetch(PDO::FETCH_ASSOC)) {
-      unlink('../uploaded_img/' . $fetch_delete_image['image']);
+      unlink('../uploaded_imgs/' . $fetch_delete_image['image']);
    }
    $delete_posts = $conn->prepare("DELETE FROM `posts` WHERE admin_id = ?");
    $delete_posts->execute([$admin_id]);

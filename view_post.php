@@ -72,7 +72,7 @@ if (isset($_POST['delete_comment'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="shortcut icon" href="assets/icon.png" type="image/x-icon">
     <title>view post</title>
 </head>
@@ -142,7 +142,7 @@ if (isset($_POST['delete_comment'])) {
                         <?php
                         if ($fetch_posts['image'] != '') {
                         ?>
-                            <img src="uploaded_img/<?= $fetch_posts['image']; ?>" class="post-image" alt="">
+                            <img src="uploaded_imgs/<?= $fetch_posts['image']; ?>" class="post-image" alt="">
                         <?php
                         }
                         ?>

@@ -32,7 +32,7 @@ if (isset($_POST['save'])) {
    $image = filter_var($image, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
    $image_size = $_FILES['image']['size'];
    $image_tmp_name = $_FILES['image']['tmp_name'];
-   $image_folder = '../uploaded_img/' . $image;
+   $image_folder = '../uploaded_imgs/' . $image;
 
    $select_image = $conn->prepare("SELECT * FROM `posts` WHERE image = ? AND admin_id = ?");
    $select_image->execute([$image, $admin_id]);
@@ -47,7 +47,7 @@ if (isset($_POST['save'])) {
          move_uploaded_file($image_tmp_name, $image_folder);
          $update_image->execute([$image, $post_id]);
          if ($old_image != $image and $old_image != '') {
-            unlink('../uploaded_img/' . $old_image);
+            unlink('../uploaded_imgs/' . $old_image);
          }
          $message[] = 'image updated!';
       }
@@ -62,7 +62,7 @@ if (isset($_POST['delete_post'])) {
    $delete_image->execute([$post_id]);
    $fetch_delete_image = $delete_image->fetch(PDO::FETCH_ASSOC);
    if ($fetch_delete_image['image'] != '') {
-      unlink('../uploaded_img/' . $fetch_delete_image['image']);
+      unlink('../uploaded_imgs/' . $fetch_delete_image['image']);
    }
    $delete_post = $conn->prepare("DELETE FROM `posts` WHERE id = ?");
    $delete_post->execute([$post_id]);
@@ -80,7 +80,7 @@ if (isset($_POST['delete_image'])) {
    $delete_image->execute([$post_id]);
    $fetch_delete_image = $delete_image->fetch(PDO::FETCH_ASSOC);
    if ($fetch_delete_image['image'] != '') {
-      unlink('../uploaded_img/' . $fetch_delete_image['image']);
+      unlink('../uploaded_imgs/' . $fetch_delete_image['image']);
    }
    $unset_image = $conn->prepare("UPDATE `posts` SET image = ? WHERE id = ?");
    $unset_image->execute([$empty_image, $post_id]);
@@ -159,7 +159,7 @@ if (isset($_POST['delete_image'])) {
                <p>post image</p>
                <input type="file" name="image" class="box" accept="image/jpg, image/jpeg, image/png, image/webp">
                <?php if ($fetch_posts['image'] != '') { ?>
-                  <img src="../uploaded_img/<?= $fetch_posts['image']; ?>" class="image" alt="">
+                  <img src="../uploaded_imgs/<?= $fetch_posts['image']; ?>" class="image" alt="">
                   <input type="submit" value="delete image" class="inline-delete-btn" name="delete_image">
                <?php } ?>
                <div class="flex-btn">

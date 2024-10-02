@@ -18,7 +18,7 @@ if (isset($_POST['delete'])) {
    $delete_image->execute([$p_id]);
    $fetch_delete_image = $delete_image->fetch(PDO::FETCH_ASSOC);
    if ($fetch_delete_image['image'] != '') {
-      unlink('../uploaded_img/' . $fetch_delete_image['image']);
+      unlink('../uploaded_imgs/' . $fetch_delete_image['image']);
    }
    $delete_post = $conn->prepare("DELETE FROM `posts` WHERE id = ?");
    $delete_post->execute([$p_id]);
@@ -73,7 +73,7 @@ if (isset($_POST['delete'])) {
                <form method="post" class="box">
                   <input type="hidden" name="post_id" value="<?= $post_id; ?>">
                   <?php if ($fetch_posts['image'] != '') { ?>
-                     <img src="../uploaded_img/<?= $fetch_posts['image']; ?>" class="image" alt="">
+                     <img src="../uploaded_imgs/<?= $fetch_posts['image']; ?>" class="image" alt="">
                   <?php } ?>
                   <div class="status" style="background-color:<?php if ($fetch_posts['status'] == 'active') {
                                                                   echo 'limegreen';
